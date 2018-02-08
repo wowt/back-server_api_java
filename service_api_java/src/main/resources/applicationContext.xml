@@ -58,7 +58,7 @@
     </bean>
 
     <!-- SqlSessionFactory -->
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <bean id="sqlSessionFactory_fruitmall" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource_fruitmall" />
     </bean>
 
@@ -68,7 +68,7 @@
     <!-- Mapper扫描 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.fruitmall.model.fruitmall.mapper" />
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory_fruitmall"/>
     </bean>
     <!--@end fruitmall配置结束 -->
 
@@ -102,7 +102,7 @@
     </bean>
 
     <!-- SqlSessionFactory -->
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <bean id="sqlSessionFactory_ucenter" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource_ucenter" />
     </bean>
 
@@ -112,7 +112,7 @@
     <!-- Mapper扫描 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.fruitmall.model.ucenter.mapper" />
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory_ucenter"/>
     </bean>
     <!-- @end ucenter配置结束-->
 
@@ -141,12 +141,12 @@
         <property name="defaultTargetDataSource" ref="ugc"/>
     </bean>
     <!-- 注册事务管理 -->
-    <bean id="transactionManager_ucenter" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <bean id="transactionManager_ugc" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource_ugc" />
     </bean>
 
     <!-- SqlSessionFactory -->
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <bean id="sqlSessionFactory_ugc" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource_ugc" />
     </bean>
 
@@ -156,7 +156,7 @@
     <!-- Mapper扫描 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.fruitmall.model.ugc.mapper" />
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory_ugc"/>
     </bean>
     <!--@end ugc配置结束 -->
 
@@ -185,12 +185,12 @@
         <property name="defaultTargetDataSource" ref="mailgun"/>
     </bean>
     <!-- 注册事务管理 -->
-    <bean id="transactionManager_ucenter" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <bean id="transactionManager_mailgun" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource_mailgun" />
     </bean>
 
     <!-- SqlSessionFactory -->
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <bean id="sqlSessionFactory_mailgun" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource_mailgun" />
     </bean>
 
@@ -200,7 +200,7 @@
     <!-- Mapper扫描 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.fruitmall.model.mailgun.mapper" />
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory_mailgun"/>
     </bean>
 
     <!-- 配置数据库注解aop -->
