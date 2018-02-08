@@ -1,0 +1,1 @@
+package com.fruitmall.model.event;
