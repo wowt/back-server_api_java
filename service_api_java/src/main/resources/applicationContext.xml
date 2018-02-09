@@ -31,16 +31,16 @@
     <!--fruit数据源配置-->
     <bean id="fruitmall" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass" value="${jdbc.mysql.driverClassName}"/>
-        <property name="jdbcUrl" value="${jdbc.fruit.url}"/>
-        <property name="user" value="${jdbc.fruit.username}"/>
-        <property name="password" value="${jdbc.fruit.password}"/>
-        <property name="minPoolSize" value="${jdbc.fruit.minPoolSize}" />
-        <property name="maxPoolSize" value="${jdbc.fruit.maxPoolSize}" />
-        <property name="maxIdleTime" value="${jdbc.fruit.maxIdleTime}" />
-        <property name="acquireIncrement" value="${jdbc.fruit.acquireIncrement}" />
-        <property name="maxStatements" value="${jdbc.fruit.maxStatements}" />
-        <property name="initialPoolSize" value="${jdbc.fruit.initialPoolSize}" />
-        <property name="idleConnectionTestPeriod" value="${jdbc.fruit.idleConnectionTestPeriod}" />
+        <property name="jdbcUrl" value="${jdbc.fruitmall.url}"/>
+        <property name="user" value="${jdbc.fruitmall.username}"/>
+        <property name="password" value="${jdbc.fruitmall.password}"/>
+        <property name="minPoolSize" value="${jdbc.fruitmall.minPoolSize}" />
+        <property name="maxPoolSize" value="${jdbc.fruitmall.maxPoolSize}" />
+        <property name="maxIdleTime" value="${jdbc.fruitmall.maxIdleTime}" />
+        <property name="acquireIncrement" value="${jdbc.fruitmall.acquireIncrement}" />
+        <property name="maxStatements" value="${jdbc.fruitmall.maxStatements}" />
+        <property name="initialPoolSize" value="${jdbc.fruitmall.initialPoolSize}" />
+        <property name="idleConnectionTestPeriod" value="${jdbc.fruitmall.idleConnectionTestPeriod}" />
     </bean>
 
     <bean id="dataSource_fruitmall" class="com.fruitmall.model.dbutil.DynamicDataSource">
@@ -54,7 +54,7 @@
     </bean>
     <!-- 注册事务管理 -->
     <bean id="transactionManager_fruitmall" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource_fruit" />
+        <property name="dataSource" ref="dataSource_fruitmall" />
     </bean>
 
     <!-- SqlSessionFactory -->
@@ -74,7 +74,7 @@
 
     <!--ucenter数据源-->
     <bean id="ucenter" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-        <property name="driverClass" value="${jdbc.ucenter.driverClassName}"/>
+        <property name="driverClass" value="${jdbc.mysql.driverClassName}"/>
         <property name="jdbcUrl" value="${jdbc.ucenter.url}"/>
         <property name="user" value="${jdbc.ucenter.username}"/>
         <property name="password" value="${jdbc.ucenter.password}"/>
@@ -118,7 +118,7 @@
 
     <!-- ugc库配置 -->
     <bean id="ugc" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-        <property name="driverClass" value="${jdbc.ugc.driverClassName}"/>
+        <property name="driverClass" value="${jdbc.mysql.driverClassName}"/>
         <property name="jdbcUrl" value="${jdbc.ugc.url}"/>
         <property name="user" value="${jdbc.ugc.username}"/>
         <property name="password" value="${jdbc.ugc.password}"/>
@@ -162,7 +162,7 @@
 
     <!--mailgun 配置 -->
     <bean id="mailgun" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-        <property name="driverClass" value="${jdbc.mailgun.driverClassName}"/>
+        <property name="driverClass" value="${jdbc.mysql.driverClassName}"/>
         <property name="jdbcUrl" value="${jdbc.mailgun.url}"/>
         <property name="user" value="${jdbc.mailgun.username}"/>
         <property name="password" value="${jdbc.mailgun.password}"/>

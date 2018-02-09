@@ -1,5 +1,6 @@
 package com.fruitmall.tools;
 
+import com.fruitmall.fmsdk.BizException;
 import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.Cipher;
@@ -27,7 +28,7 @@ public class SecurityManagerTool {
             return cipher.doFinal(content);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new BusinessException("加密失败",e);
+            throw new BizException("加密失败",e);
         }
     }
 
@@ -38,7 +39,7 @@ public class SecurityManagerTool {
             return cipher.doFinal(content);
         } catch (Exception e) {
             e.printStackTrace();
-             throw new BusinessException("解密失败",e);
+             throw new BizException("解密失败",e);
         }
     }
 
